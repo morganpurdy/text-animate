@@ -1,4 +1,4 @@
-const colors = ['#f5a147','#51cad8','#112b39'];
+const colors = ['#D0EDF1','#479AD1','#2D1832'];
 var blobs = document.querySelectorAll("#background path");
 
 blobs.forEach(blob => {
