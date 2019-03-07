@@ -11,20 +11,27 @@ svg {
 
 /* Animate the background shapes */
 #background path {
-  animation: pulse 3s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite;
+    -webkit-animation: pulse 4s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite;
+            animation: pulse 4s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite;
 
-  /* Necessary to keep the SVG objects in place while scaling */
-  transform-origin: 50% 50%;
-  transform-box: fill-box;
+    /* Necessary to keep the SVG objects in place while scaling */
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    transform-box: fill-box;
 }
 
-@keyframes pulse {
-  /* Rotating it along with the scale makes it a little bit more fancy */
-  0%, 100% { transform: scale(0) rotate(33deg); }
-  35%, 65% { transform: scale(1) rotate(0deg); }
+/* Reveal the desired lines of text in the desired order */
+#textClip text:nth-of-type(n + 1):nth-of-type(-n + 2) {
+    -webkit-animation: showFirst 12s infinite;
+            animation: showFirst 12s infinite;
+}
+#textClip text:nth-of-type(n + 3):nth-of-type(-n + 4) {
+    -webkit-animation: showSecond 12s infinite;
+            animation: showSecond 12s infinite;
 }
 
-@-webkit-keyframes pulse {
+
+-webkit-keyframes pulse {
     /* Rotating it along with the scale makes it a little bit more fancy */
     0%, 100% { -webkit-transform: scale(0) rotate(33deg); transform: scale(0) rotate(33deg); }
     35%, 65% { -webkit-transform: scale(1) rotate(0deg); transform: scale(1) rotate(0deg); }
@@ -58,16 +65,4 @@ svg {
         opacity: 1;
     }
     0%, 33%, 66.0001%, 100% { opacity: 0; }
-}
-@-webkit-keyframes showThird {
-    66.0001%, 99.999% {
-        opacity: 1;
-    }
-    0%, 66%, 100% { opacity: 0; }
-}
-@keyframes showThird {
-    66.0001%, 99.999% {
-        opacity: 1;
-    }
-    0%, 66%, 100% { opacity: 0; }
 }
