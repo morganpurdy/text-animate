@@ -22,12 +22,12 @@ svg {
 
 /* Reveal the desired lines of text in the desired order */
 #textClip text:nth-of-type(n + 1):nth-of-type(-n + 2) {
-    -webkit-animation: showFirst 12s infinite;
-            animation: showFirst 12s infinite;
+    -webkit-animation: showFirst 8s infinite;
+            animation: showFirst 8s infinite;
 }
 #textClip text:nth-of-type(n + 3):nth-of-type(-n + 4) {
-    -webkit-animation: showSecond 12s infinite;
-            animation: showSecond 12s infinite;
+    -webkit-animation: showSecond 8s infinite;
+            animation: showSecond 8s infinite;
 }
 
 
@@ -43,26 +43,26 @@ svg {
     35%, 65% { -webkit-transform: scale(1) rotate(0deg); transform: scale(1) rotate(0deg); }
 }
 @-webkit-keyframes showFirst {
-    0%, 33% {
-        opacity: 1;
-    }
-    33.0001%, 100% { opacity: 0; }
+  0%, 50% {
+      opacity: 1;
+  }
+  50.0001%, 100% { opacity: 0; }
 }
 @keyframes showFirst {
-    0%, 33% {
+    0%, 50% {
         opacity: 1;
     }
-    33.0001%, 100% { opacity: 0; }
+    50.0001%, 100% { opacity: 0; }
 }
 @-webkit-keyframes showSecond {
-    33.0001%, 66% {
-        opacity: 1;
-    }
-    0%, 33%, 66.0001%, 100% { opacity: 0; }
+  50.0001%, 100% {
+      opacity: 1;
+  }
+  0%, 50% { opacity: 0; }
 }
 @keyframes showSecond {
-    33.0001%, 66% {
+    50.0001%, 100% {
         opacity: 1;
     }
-    0%, 33%, 66.0001%, 100% { opacity: 0; }
+    0%, 50% { opacity: 0; }
 }
